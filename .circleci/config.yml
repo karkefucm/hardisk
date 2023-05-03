@@ -1,0 +1,16 @@
+version: 2
+jobs: 
+  first:
+    docker:
+      - image: cimg/python:3.8      
+    steps: 
+      - checkout 
+      - run:
+          command: |
+            python3 first.py
+ 
+workflows:
+  version: 2
+  build:
+    jobs:
+      - first
